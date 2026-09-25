@@ -1,0 +1,65 @@
+import { Injectable } from '@angular/core';
+
+export interface Producto {
+  id: number;
+  nombre: string;
+  categoria: string;
+  precio: number;
+  existencias: number;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductosService {
+
+  private productos: Producto[] = [
+    {
+      id: 1,
+      nombre: 'Libreta',
+      categoria: 'Papelería',
+      precio: 75,
+      existencias: 12
+    },
+    {
+      id: 2,
+      nombre: 'Plumones',
+      categoria: 'Papelería',
+      precio: 120,
+      existencias: 8
+    },
+    {
+      id: 3,
+      nombre: 'Mouse',
+      categoria: 'Tecnología',
+      precio: 250,
+      existencias: 0
+    },
+    {
+      id: 4,
+      nombre: 'Audífonos',
+      categoria: 'Tecnología',
+      precio: 450,
+      existencias: 5
+    },
+    {
+      id: 5,
+      nombre: 'Botella',
+      categoria: 'Accesorios',
+      precio: 150,
+      existencias: 10
+    },
+    {
+      id: 6,
+      nombre: 'Mochila',
+      categoria: 'Accesorios',
+      precio: 550,
+      existencias: 0
+    }
+  ];
+
+  getProductos(): Producto[] {
+    return this.productos;
+  }
+
+}
